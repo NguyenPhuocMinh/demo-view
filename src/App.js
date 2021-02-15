@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './assets/scss/apple-travel.scss';
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
+import Home from './views/Home/Home';
+import Register from './views/Register/RegisterPage';
+import Login from './views/Login/LoginPage';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router >
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/register" exact component={Register} />
+        <Route path="/login" exact component={Login} />
+      </Switch>
+    </Router>
   );
 }
 
